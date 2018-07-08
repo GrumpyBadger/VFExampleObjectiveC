@@ -13,7 +13,23 @@
 		D70238C820E9FEE50063B968 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70238C720E9FEE50063B968 /* Assets.xcassets */; };
 		D70238CB20E9FEE50063B968 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D70238C920E9FEE50063B968 /* LaunchScreen.storyboard */; };
 		D70238CE20E9FEE50063B968 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D70238CD20E9FEE50063B968 /* main.m */; };
+		D7BD024920F1C9AC00D91DD4 /* Vternalframework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BD024720F1C99B00D91DD4 /* Vternalframework.framework */; };
+		D7BD024A20F1C9AC00D91DD4 /* Vternalframework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7BD024720F1C99B00D91DD4 /* Vternalframework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D70238E420EA125C0063B968 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7BD024A20F1C9AC00D91DD4 /* Vternalframework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D70238BB20E9FECA0063B968 /* VFExampleObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VFExampleObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +42,7 @@
 		D70238CA20E9FEE50063B968 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D70238CC20E9FEE50063B968 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D70238CD20E9FEE50063B968 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7BD024720F1C99B00D91DD4 /* Vternalframework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vternalframework.framework; path = ../../Downloads/Vternalframework.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7BD024920F1C9AC00D91DD4 /* Vternalframework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +60,7 @@
 		D70238B220E9FEC90063B968 = {
 			isa = PBXGroup;
 			children = (
+				D7BD024720F1C99B00D91DD4 /* Vternalframework.framework */,
 				D70238BD20E9FECA0063B968 /* VFExampleObjectiveC */,
 				D70238BC20E9FECA0063B968 /* Products */,
 			);
@@ -81,6 +100,7 @@
 				D70238B720E9FECA0063B968 /* Sources */,
 				D70238B820E9FECA0063B968 /* Frameworks */,
 				D70238B920E9FECA0063B968 /* Resources */,
+				D70238E420EA125C0063B968 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,6 +122,11 @@
 				TargetAttributes = {
 					D70238BA20E9FECA0063B968 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -285,6 +310,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C7V53CA2U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VFExampleObjectiveC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +331,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C7V53CA2U;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = VFExampleObjectiveC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

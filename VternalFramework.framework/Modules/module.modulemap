@@ -1,0 +1,6 @@
+framework module VternalFramework {
+  umbrella header "VternalFramework.h"
+
+  export *
+  module * { export * }
+}

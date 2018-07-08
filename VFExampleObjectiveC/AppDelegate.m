@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <VternalFramework/VternalFramework.h>
 
 @interface AppDelegate ()
 
@@ -17,9 +18,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [VternalFramework registerApplicationWithKey:@"be49c1d5a297c7a41b3c55010da97b33a9fd67b32251928a23ce61738ab2a885" callback:^(BOOL registered){
+        if( registered )
+        {
+            NSLog(@"Registered for %@", [[NSBundle mainBundle] bundleIdentifier] );
+        }
+        else
+        {
+            NSLog(@"Failed to register for %@", [[NSBundle mainBundle] bundleIdentifier] );
+        }
+    }];
+    
     return YES;
 }
 
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    NSLog(@"performFetchWithCompletionHandler");
+    
+    long cTime = [VternalFramework conjugateWithTimeLimit:20];
+    
+    NSLog(@"conjugation took %lds", cTime );
+    
+    completionHandler( UIBackgroundFetchResultNewData );
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
